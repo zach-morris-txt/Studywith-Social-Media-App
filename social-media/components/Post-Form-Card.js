@@ -1,3 +1,4 @@
+import Avatar from "./Avatar";
 import Card from "./Card";
 
 export default function PostFormCard() {
@@ -5,9 +6,7 @@ export default function PostFormCard() {
         <Card>
             <div className="flex gap-1">
                 <div>
-                    <div className="w-12 rounded-full overflow-hidden">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" alt="pfp icon" />
-                    </div>
+                    <Avatar />
                 </div>
                 <textarea className="grow p-3 h-14" placeholder={'Whats on your mind?'} />
             </div>
