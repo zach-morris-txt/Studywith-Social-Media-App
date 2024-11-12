@@ -1,18 +1,12 @@
-import NavigationCard from "@/components/Navigation-Card";
+import Layout from "@/components/Layout";
 import PostCard from "@/components/Post-Card";
 import PostFormCard from "@/components/Post-Form-Card";
 
-
-export default function Home() {
+export default function Home({children}) {
   return (
-    <div className="flex mt-4 max-w-4xl mx-auto gap-6">
-      <div className="w-1/4">
-        <NavigationCard />
-      </div>
-      <div className="w-3/4">
+    <Layout >
         <PostFormCard />
         <PostCard />
-      </div>
-    </div>
+    </Layout>
   );
 }
