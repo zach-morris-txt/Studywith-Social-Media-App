@@ -1,5 +1,6 @@
 import Avatar from "@/components/Avatar";
 import Card from "@/components/Card";
+import Friend from "@/components/Friend";
 import Layout from "@/components/Layout";
 import PostCard from "@/components/Post-Card";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { useRouter } from "next/router";
 
 export default function ProfilePage() {
     const router = useRouter();
-    const {pathname} = router;
+    const {asPath:pathname} = router;
     const isPosts = pathname.includes('posts') || pathname === '/profile';
     const isAbout = pathname.includes('about');
     const isFriends = pathname.includes('friends');
@@ -60,7 +61,73 @@ export default function ProfilePage() {
                     </div>
                 </div>
             </Card>
-            <PostCard />
+            {isPosts && (
+                <div>
+                    <PostCard />
+                </div>
+            )}
+            {isAbout && (
+                <div>
+                    <Card>
+                        <h2 className="text-3xl mb-2">About Me</h2>
+                        <p className="mb-2 text-sm">Lorem impsum hbkhbalk skjbwkjnkjbn whkbwanwinlec jbkeajbec ab ejhbcaehba ehjbeahb</p>
+                        <p className="mb-2 text-sm">Lorem impsum hbkhbalk skjbwkjnkjbn whkbwanwinlec jbkeajbec ab ejhbcaehba ehjbeahb</p>
+                    </Card>
+                </div>
+            )}
+            {isFriends && (
+                <div>
+                    <Card>
+                        <h2 className="text-3xl mb-2">Friends</h2>
+                        <div className="grid gap-4 grid-cols-3">
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                            <Friend />
+                        </div>
+                    </Card>
+                </div>
+            )}
+            {isPhotos && (
+                <div>
+                    <Card>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://st.depositphotos.com/1591133/2422/i/450/depositphotos_24225049-stock-photo-canal-grande-and-basilica-di.jpg" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://t4.ftcdn.net/jpg/00/37/04/55/360_F_37045590_7oWDGuxwblGlVzr9ffuxN8OgIxmqLPCJ.jpg" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://images.pexels.com/photos/28277496/pexels-photo-28277496/free-photo-of-the-town-of-cinque-terre-at-night.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://st.depositphotos.com/1591133/2422/i/450/depositphotos_24225049-stock-photo-canal-grande-and-basilica-di.jpg" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://t4.ftcdn.net/jpg/00/37/04/55/360_F_37045590_7oWDGuxwblGlVzr9ffuxN8OgIxmqLPCJ.jpg" alt="" />
+                            </div>
+                            <div className="h-36 flex items-center rounded-md overflow-hidden">
+                                <img className="" src="https://images.pexels.com/photos/28277496/pexels-photo-28277496/free-photo-of-the-town-of-cinque-terre-at-night.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                            </div>
+                        </div>
+                    </Card>
+                </div>
+            )}
         </Layout>
     )
 }
