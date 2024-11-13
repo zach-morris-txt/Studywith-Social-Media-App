@@ -5,8 +5,8 @@ import PostFormCard from "@/components/Post-Form-Card";
 export default function Home({children}) {
   return (
     <Layout >
-        <PostFormCard />
-        <PostCard />
+      <PostFormCard />
+      <PostCard />
     </Layout>
   );
 }

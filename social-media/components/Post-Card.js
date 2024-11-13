@@ -33,7 +33,7 @@ export default function PostCard() {
                             <span className="mr-1 font-semibold hover:underline hover:cursor-pointer">John Doe</span> 
                         </Link>
                         shared a 
-                        <a className="text-blue-500">album</a>
+                        <a className="text-blue-500 ml-1">album</a>
                     </p>
                     <p className="text-gray-500 text-sm">2 hours ago</p>
                 </div>
